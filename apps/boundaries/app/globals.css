@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mnky-primary: 15 118 110;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+}

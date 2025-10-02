@@ -1,0 +1,36 @@
+{
+  "name": "cmdhd-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.9.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "dotenv -e .env -- turbo run dev --parallel",
+    "build": "dotenv -e .env -- turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "ci": "pnpm lint && pnpm typecheck && pnpm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "^9.9.0",
+    "prettier": "^3.3.3",
+    "turbo": "^2.0.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react-hooks": "^4.6.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": ["@cmdhd/config/eslint"]
+  },
+  "prettier": "@cmdhd/config/prettier"
+}
