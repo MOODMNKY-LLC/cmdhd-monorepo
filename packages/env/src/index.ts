@@ -3,7 +3,7 @@ import { z } from 'zod'
 const schema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   APP_ENV: z.string().default('local'),
-  NEXT_PUBLIC_SITE_NAME: z.string().min(1)
+  NEXT_PUBLIC_SITE_NAME: z.string().min(1).default('CMDHD')
 })
 
 export type Env = z.infer<typeof schema>
