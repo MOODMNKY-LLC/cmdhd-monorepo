@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { cn } from '@cmdhd/utils'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children?: React.ReactNode
+}
 
-export function Button({ className, ...props }: ButtonProps) {
+export function Button({ className, children, ...props }: ButtonProps) {
   return (
     <button
       className={cn(
@@ -11,6 +13,8 @@ export function Button({ className, ...props }: ButtonProps) {
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </button>
   )
 }
